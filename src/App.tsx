@@ -1,8 +1,11 @@
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
 import Cards from "./components/cards/Cards";
+
 import { Suspense } from "react";
 import type { Icard } from "./Types/card";
+import Footer from "./components/Footer/Footer";
+
 
 const cardsFetch = async (): Promise<Icard[]> => {
   const res = await fetch("/data.json");
@@ -19,6 +22,7 @@ function App() {
       <Suspense fallback={<h2>Loading...</h2>}>
         <Cards cardsPromise={cardsPromise} />
       </Suspense>
+      <Footer/>
     </>
   );
 }
