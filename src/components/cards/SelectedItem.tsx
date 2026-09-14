@@ -1,14 +1,30 @@
-import React from "react";
 import type { Icard } from "../../Types/card";
 
-const SelectedItem = ({ card }: { card: Icard }) => {
+interface SelectedItemProps {
+  card: Icard;
+  selectedCards: Icard[];
+  setSelectedCards: React.Dispatch<React.SetStateAction<Icard[]>>;
+}
+
+const SelectedItem = ({
+  card,
+  selectedCards,
+  setSelectedCards,
+}: SelectedItemProps) => {
   const badgeStyles: Record<string, string> = {
-    Popular: "border-blue-200 bg-blue-50 text-blue-600",
-    Versatile: "border-emerald-200 bg-emerald-50 text-emerald-600",
-    Fast: "border-orange-200 bg-orange-50 text-orange-600",
-    "SSR / Edge": "border-purple-200 bg-purple-50 text-purple-600",
-    Standard: "border-emerald-200 bg-emerald-50 text-emerald-600",
-    "Top SQL": "border-blue-200 bg-blue-50 text-blue-600",
+    beginner: "border-emerald-200 bg-emerald-50 text-emerald-700",
+    intermediate: "border-amber-200 bg-amber-50 text-amber-700",
+    advanced: "border-rose-200 bg-rose-50 text-rose-700",
+  };
+
+  const handleAddToStack = () => {
+    const alreadySelected = selectedCards.some((item) => item.id === card.id);
+
+    if (alreadySelected) {
+      return;
+    }
+
+    setSelectedCards([...selectedCards, card]);
   };
 
   return (
@@ -25,10 +41,10 @@ const SelectedItem = ({ card }: { card: Icard }) => {
         </div>
 
         <span
-          className={`rounded-full border px-4 py-1.5 text-sm font-semibold ${
+          className={`rounded-full border px-4 py-1.5 text-sm font-semibold $
             badgeStyles[card.badge] ||
             "border-slate-200 bg-slate-50 text-slate-600"
-          }`}
+          `}
         >
           {card.badge}
         </span>
@@ -64,9 +80,12 @@ const SelectedItem = ({ card }: { card: Icard }) => {
       </div>
 
       {/* Button */}
-      <button className="mt-6 w-full rounded-xl bg-slate-950 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-slate-800 hover:shadow-md active:scale-[0.98]">
-        Add to Stack
-      </button>
+<button
+  onClick={handleAddToStack}
+  className="mt-6 w-full rounded-xl bg-slate-950 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-slate-800 hover:shadow-md active:scale-[0.98]"
+>
+  Add to Stack
+</button>
     </div>
   );
 };

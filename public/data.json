@@ -118,35 +118,6 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Fast"
-  },
-  {
-    "id": "git",
-    "name": "Git",
-    "category": "Tools",
-    "description": "A distributed version control system for tracking code changes and collaborating with other developers.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Git.svg",
-    "rating": 4.9,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Essential"
-  },
-  {
-    "id": "nextjs",
-    "name": "Next.js",
-    "category": "Frontend",
-    "description": "A React framework offering server-side rendering, static generation, and full-stack capabilities out of the box.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Next.js.svg",
-    "rating": 4.8,
-    "difficulty": "Advanced",
-    "badge": "Full-Stack"
-  },
-  {
-    "id": "figma",
-    "name": "Figma",
-    "category": "Tools",
-    "description": "A collaborative interface design tool used to prototype, design, and hand off UI before development.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Figma.svg",
-    "rating": 4.7,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Design"
   }
+
 ]
