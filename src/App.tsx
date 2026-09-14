@@ -7,7 +7,6 @@ import type { Icard } from "./Types/card";
 import Footer from "./components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 
-
 const cardsFetch = async (): Promise<Icard[]> => {
   const res = await fetch("/data.json");
   const data = await res.json();
@@ -20,10 +19,18 @@ function App() {
     <>
       <Navbar />
       <Banner />
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense
+        fallback={
+          <div className="flex min-h-screen items-center justify-center">
+            <h2 className="text-2xl font-semibold text-slate-600">
+              Loading...
+            </h2>
+          </div>
+        }
+      >
         <Cards cardsPromise={cardsPromise} />
       </Suspense>
-      <Footer/>
+      <Footer />
       <ToastContainer />
     </>
   );
