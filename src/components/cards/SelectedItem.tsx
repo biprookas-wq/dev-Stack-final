@@ -18,24 +18,21 @@ const SelectedItem = ({
     advanced: "border-rose-200 bg-rose-50 text-rose-700",
   };
 
-const handleAddToStack = () => {
-  const alreadySelected = selectedCards.some(
-    (item) => item.id === card.id
-  );
+  const handleAddToStack = () => {
+    const alreadySelected = selectedCards.some((item) => item.id === card.id);
 
-  if (alreadySelected) {
-    toast.info(`${card.name} is already in your stack!`);
-    return;
-  }
+    if (alreadySelected) {
+      toast.info(`${card.name} is already in your stack!`);
+      return;
+    }
 
-  setSelectedCards([...selectedCards, card]);
+    setSelectedCards([...selectedCards, card]);
 
-  toast.success(`${card.name} added to your stack!`);
-};
+    toast.success(`${card.name} added to your stack!`);
+  };
 
   return (
     <div className="group w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-
       {/* Image + Badge */}
       <div className="flex items-center justify-between">
         <div className="flex h-12 w-12 items-center justify-center">
@@ -47,10 +44,10 @@ const handleAddToStack = () => {
         </div>
 
         <span
-          className={`rounded-full border px-4 py-1.5 text-sm font-semibold $
+          className={`rounded-full border px-4 py-1.5 text-sm font-semibold ${
             badgeStyles[card.badge] ||
             "border-slate-200 bg-slate-50 text-slate-600"
-          `}
+          }`}
         >
           {card.badge}
         </span>
@@ -86,12 +83,12 @@ const handleAddToStack = () => {
       </div>
 
       {/* Button */}
-<button
-  onClick={handleAddToStack}
-  className="mt-6 w-full rounded-xl bg-slate-950 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-slate-800 hover:shadow-md active:scale-[0.98]"
->
-  Add to Stack
-</button>
+      <button
+        onClick={handleAddToStack}
+        className="mt-6 w-full rounded-xl bg-slate-950 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-slate-800 hover:shadow-md active:scale-[0.98]"
+      >
+        Add to Stack
+      </button>
     </div>
   );
 };
