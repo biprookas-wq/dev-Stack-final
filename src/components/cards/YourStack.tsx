@@ -23,7 +23,6 @@ const YourStack = ({
             } Selected`}
       </p>
 
-      {/* Selected Cards */}
       {selectedCards.length === 0 ? (
         <div className="mt-4 flex h-24 items-center justify-center rounded-xl border border-dashed border-slate-200">
           <span className="text-sm text-slate-300">
@@ -70,7 +69,6 @@ const YourStack = ({
         </div>
       )}
 
-      {/* Remove All */}
       {selectedCards.length > 0 && (
         <button
           onClick={() => setSelectedCards([])}

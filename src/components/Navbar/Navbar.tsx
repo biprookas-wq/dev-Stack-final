@@ -4,10 +4,8 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white">
       <div className="container mx-auto flex items-center justify-between p-4">
-        {/* Logo */}
         <img src={Logo} alt="Logo" />
 
-        {/* Navigation */}
         <ul className="hidden space-x-4 md:flex">
           <li>Home</li>
           <li>Technologies</li>
@@ -16,7 +14,7 @@ const Navbar = () => {
           <li>Contact</li>
         </ul>
 
-        {/* Buttons */}
+        
         <div>
           <button className="btn btn-ghost rounded-3xl">Sign In</button>
 

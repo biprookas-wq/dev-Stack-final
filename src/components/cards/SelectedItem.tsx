@@ -33,7 +33,7 @@ const SelectedItem = ({
 
   return (
     <div className="group w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      {/* Image + Badge */}
+
       <div className="flex items-center justify-between">
         <div className="flex h-12 w-12 items-center justify-center">
           <img
@@ -53,20 +53,16 @@ const SelectedItem = ({
         </span>
       </div>
 
-      {/* Name */}
       <h2 className="mt-7 text-2xl font-bold tracking-tight text-slate-900">
         {card.name}
       </h2>
 
-      {/* Description */}
       <p className="mt-3 min-h-[72px] text-[15px] leading-7 text-slate-500">
         {card.description}
       </p>
 
-      {/* Divider */}
       <div className="my-5 h-px bg-slate-100"></div>
 
-      {/* Info */}
       <div className="flex items-center justify-between gap-3">
         <span className="rounded-md bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-600">
           {card.category}
@@ -82,7 +78,6 @@ const SelectedItem = ({
         </span>
       </div>
 
-      {/* Button */}
       <button
         onClick={handleAddToStack}
         className="mt-6 w-full rounded-xl bg-slate-950 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-slate-800 hover:shadow-md active:scale-[0.98]"
