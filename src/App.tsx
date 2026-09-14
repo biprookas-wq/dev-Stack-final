@@ -5,6 +5,7 @@ import Cards from "./components/cards/Cards";
 import { Suspense } from "react";
 import type { Icard } from "./Types/card";
 import Footer from "./components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 const cardsFetch = async (): Promise<Icard[]> => {
@@ -23,6 +24,7 @@ function App() {
         <Cards cardsPromise={cardsPromise} />
       </Suspense>
       <Footer/>
+      <ToastContainer />
     </>
   );
 }

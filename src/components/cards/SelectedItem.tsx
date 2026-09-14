@@ -1,4 +1,5 @@
 import type { Icard } from "../../Types/card";
+import { toast } from "react-toastify";
 
 interface SelectedItemProps {
   card: Icard;
@@ -17,15 +18,20 @@ const SelectedItem = ({
     advanced: "border-rose-200 bg-rose-50 text-rose-700",
   };
 
-  const handleAddToStack = () => {
-    const alreadySelected = selectedCards.some((item) => item.id === card.id);
+const handleAddToStack = () => {
+  const alreadySelected = selectedCards.some(
+    (item) => item.id === card.id
+  );
 
-    if (alreadySelected) {
-      return;
-    }
+  if (alreadySelected) {
+    toast.info(`${card.name} is already in your stack!`);
+    return;
+  }
 
-    setSelectedCards([...selectedCards, card]);
-  };
+  setSelectedCards([...selectedCards, card]);
+
+  toast.success(`${card.name} added to your stack!`);
+};
 
   return (
     <div className="group w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
